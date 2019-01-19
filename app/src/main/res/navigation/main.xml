@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="cu.challenges.jesus.shopifychallenge.ui.home.HomeFragment"
+        android:label="home_fragment"
+        tools:layout="@layout/home_fragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_collectionDetails"
+            app:destination="@id/collectionDetails"
+            app:enterAnim="@anim/abc_slide_out_bottom"
+            app:exitAnim="@anim/abc_slide_in_bottom"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/collectionDetails"
+        android:name="ui.home.CollectionDetails"
+        android:label="fragment_collection_details"
+        tools:layout="@layout/fragment_collection_details" >
+        <argument
+            android:name="collectionId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+</navigation>
