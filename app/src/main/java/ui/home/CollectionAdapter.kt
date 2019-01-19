@@ -10,7 +10,6 @@ import cu.challenges.jesus.shopifychallenge.R
 import cu.challenges.jesus.shopifychallenge.domain.Collection
 import cu.challenges.jesus.shopifychallenge.models.CollectionVM
 import ui.home.ARG_collectionId
-import ui.home.CollectionDetails
 
 class CollectionAdapter : PagedListAdapter<Collection, CollectionVM>(
         object : DiffUtil.ItemCallback<Collection>() {

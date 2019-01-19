@@ -1,6 +1,5 @@
 package cu.challenges.jesus.shopifychallenge.ui.home
 
-import android.annotation.SuppressLint
 import android.os.AsyncTask
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

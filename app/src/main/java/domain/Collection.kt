@@ -1,6 +1,5 @@
 package cu.challenges.jesus.shopifychallenge.domain
 
-import android.net.Uri
 import cu.challenges.jesus.shopifychallenge.data.CustomCollectionPageStart
 import java.net.URI
 import java.util.*

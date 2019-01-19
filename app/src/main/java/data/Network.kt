@@ -8,7 +8,6 @@ import okhttp3.Request
 import okhttp3.ResponseBody
 import java.text.DateFormat
 import java.util.concurrent.TimeUnit
-import kotlin.math.min
 import android.app.Activity
 import android.util.Log
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException

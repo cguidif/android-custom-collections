@@ -1,6 +1,5 @@
 package cu.challenges.jesus.shopifychallenge
 
-import com.google.gson.GsonBuilder
 import cu.challenges.jesus.shopifychallenge.data.createJsonObject
 import cu.challenges.jesus.shopifychallenge.data.getCollectionsResponse
 import cu.challenges.jesus.shopifychallenge.data.getProducts
@@ -9,7 +8,6 @@ import cu.challenges.jesus.shopifychallenge.domain.Product
 import org.junit.Assert.fail
 import org.junit.Test
 import java.io.File
-import java.text.DateFormat
 
 class CollectionTester {
 
