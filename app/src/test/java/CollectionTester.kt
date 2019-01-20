@@ -5,7 +5,7 @@ import cu.challenges.jesus.shopifychallenge.data.getCollectionsResponse
 import cu.challenges.jesus.shopifychallenge.data.getProducts
 import cu.challenges.jesus.shopifychallenge.domain.CollectionWrapper
 import cu.challenges.jesus.shopifychallenge.domain.Product
-import org.junit.Assert.fail
+import org.junit.Assert.*
 import org.junit.Test
 import java.io.File
 
@@ -16,12 +16,16 @@ class CollectionTester {
         val json = File("./src/androidTest/assets/custom_collections.json").readText()
         val g = createJsonObject()
         val wrapper = g.fromJson<CollectionWrapper>(json, CollectionWrapper::class.java)
+        assertNotNull(wrapper)
+        assertEquals(wrapper.custom_collections.size, 17)
     }
 
     @Test
     fun testNetwork(){
         val wrapper = getCollectionsResponse(null) ?: return fail()
         wrapper.custom_collections.forEach { println(Pair(it.image.height, it.image.width)) }
+        assertNotNull(wrapper)
+        assertEquals(wrapper.custom_collections.size, 17)
     }
 
     @Test
@@ -145,16 +149,24 @@ class CollectionTester {
                 "         }\n" +
                 "      }"
         val product = json.fromJson<Product>(obj, Product::class.java)
+        assertNotNull(product)
+        assertNotNull(product.variants)
+        assertEquals(product.variants.size, 2)
+        assertEquals(product.images.size, 1)
     }
 
     @Test
     fun testProductsArray() {
         val collections  = getCollectionsResponse(null)
+        val idSet = HashSet<Long>()
         collections!!.custom_collections.forEach { c ->
             val products = getProducts(c.id, null)
 
             products!!.products.forEach {p ->
-                System.out.println(p.images.size > 1)
+                assertFalse(idSet.contains(p.id))
+                idSet.add(p.id)
+                assertNotNull(p)
+                assertNotNull(p.variants)
             }
         }
     }
